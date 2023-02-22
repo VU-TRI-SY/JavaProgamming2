@@ -1,0 +1,10 @@
+/**
+ * 
+ */
+/**
+ * @author vutri
+ *
+ */
+module tutorialPro2 {
+	requires javaparser.core;
+}

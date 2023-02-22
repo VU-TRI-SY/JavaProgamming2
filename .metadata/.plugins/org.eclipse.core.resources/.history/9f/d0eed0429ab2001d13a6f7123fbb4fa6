@@ -1,0 +1,32 @@
+package tut3;
+
+import java.util.Scanner;
+
+public class ProgWriter {
+    private static final String TEMPLATE = "public class _ClassName_ {\n" +
+                                           "    public static void main(String[] args) {\n" +
+                                           "        System.out.println(\"_Greeting_\");\n" +
+                                           "    }\n" +
+                                           "}";
+
+    public static void main(String[] args) {
+        String generatedCode = generateCodeFromTemplate(TEMPLATE);
+        System.out.println("Generated code:");
+        System.out.println("----------------");
+        System.out.println(generatedCode);
+    }
+
+    private static String generateCodeFromTemplate(String template) {
+        Scanner scanner = new Scanner(System.in);
+        String generatedCode = template;
+        generatedCode = generatedCode.replace("_ClassName_", promptForValue(scanner, "Enter class name: "));
+        generatedCode = generatedCode.replace("_Greeting_", promptForValue(scanner, "Enter greeting: "));
+        return generatedCode;
+    }
+
+    private static String promptForValue(Scanner scanner, String prompt) {
+        System.out.print(prompt);
+        return scanner.nextLine();
+    }
+}
+

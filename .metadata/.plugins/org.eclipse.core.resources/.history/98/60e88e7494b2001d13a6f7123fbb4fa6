@@ -1,0 +1,14 @@
+package tut3;
+
+import com.github.javaparser.JavaParser;
+import com.github.javaparser.ast.CompilationUnit;
+
+public class Test {
+    public static void main(String[] args) {
+        
+        CompilationUnit codeUnit = JavaParser.parse(new File("D:\\JavaPro2Coding\\tutorialPro2\\src\\tut3\\data.txt"));
+        // obtain the generated source code
+        System.out.println(codeUnit); //print abstract syntax tree
+
+    }
+}

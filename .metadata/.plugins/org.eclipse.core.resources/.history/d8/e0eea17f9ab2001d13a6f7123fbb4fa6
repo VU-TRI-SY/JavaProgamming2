@@ -1,0 +1,17 @@
+package tut3;
+
+import java.util.Scanner;
+
+public class Ex4 {
+
+    public static void main(String[] args) {
+        final String TEMPLATE = "public class _ClassName_ {\n" +
+                "    public static void main(String[] args) {\n" +
+                "        System.out.println(\"_Greeting_\");\n" +
+                "    }\n" +
+                "}";
+    }
+
+    
+}
+
