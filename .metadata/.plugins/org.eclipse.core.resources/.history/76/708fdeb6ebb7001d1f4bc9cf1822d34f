@@ -1,0 +1,21 @@
+package tut4;
+
+public class Arrays {
+
+	public int countNegatives(int[] arr) {
+		
+		return 0;
+	}
+	
+	public int countEvens(int[] arr) {
+		
+		return 0;
+	}
+	
+	public double[] divArray(double[] arr, double div) {
+		
+		return new double[10];
+	}
+	
+	
+}

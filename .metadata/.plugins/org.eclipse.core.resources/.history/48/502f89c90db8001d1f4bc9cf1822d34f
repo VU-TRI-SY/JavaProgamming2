@@ -1,0 +1,161 @@
+package tut4;
+
+public class Arrays {
+
+	public int countNegatives(int[] arr) {
+		int count = 0;
+		for(int i = 0; i < arr.length; i++) {
+			if(arr[i] < 0) {
+				count ++;
+			}
+		}
+		
+		return count;
+	}
+	
+	public int countEvens(int[] arr) {
+		int count = 0;
+		for(int i = 0; i < arr.length; i++) {
+			if(arr[i] % 2 == 0) {
+				count ++;
+			}
+		}
+		
+		return count;
+	}
+	
+	public double[] divArray(double[] arr, double div) {
+		//res[i] = arr[i] / div
+		int len = arr.length;
+		double[] res = new double[len];
+		for(int i = 0; i < len; i++) {
+			res[i] = arr[i] / div;
+		}
+		return res;
+	}
+	
+	public int min(int[] arr) {
+		int minVal = arr[0];
+		for(int i = 1; i < arr.length; i++) {
+			if(arr[i] < minVal) {
+				minVal = arr[i];
+			}
+		}
+		return minVal;
+	}
+	
+	public boolean isAscSorted(int[] arr) {
+		for(int i = 0; i <= arr.length-2; i++) {
+			if(arr[i] > arr[i+1]) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	public int length(char[] arr) {
+		int len = 0;
+	    for (int i = 0; i < arr.length; i++) {
+	        if (arr[i] == '\u0000') {
+	            break;
+	        }else {
+	        	len++;
+	        }
+	    }
+	    return len;
+	}
+	
+	public double median(double[] arr) {
+		//b1: tạo ra mảng b là mảng copy của arr
+		//b2: tìm median trên mảng b và return kết quả
+		int len = arr.length;
+		double[] b = new double[len];
+		for(int i = 0; i < len; i++) {
+			b[i] = arr[i];
+		}
+		
+		boolean check = true;
+		while(check == true) {
+			for(int i = 0; i <= len-2; i++) {
+				if(b[i] > b[i+1]) {
+					double temp = b[i];
+					b[i] = b[i+1];
+					b[i+1] = temp;
+					check = true;
+				}
+			}
+		}
+
+		int n = arr.length;
+		double med;
+	    if (n % 2 == 0) {
+	    	med = ((double)arr[n/2] + (double)arr[n/2 - 1])/2;
+	    } else {
+	    	med = (double) arr[n/2];
+	    }
+	    return med;
+		
+	}
+	
+	public String compare(double[] a, double[] b) {
+		String result = "";
+	    int lenA = a.length;
+	    int lenB = b.length;
+	    int i = 0, j = 0;
+	    
+	    // check if a is a subset of b
+	    while (i < lenA && j < lenB) {
+	        if (a[i] < b[j]) {
+	            i++;
+	        } else if (a[i] == b[j]) {
+	            i++;
+	            j++;
+	        } else {
+	            break;
+	        }
+	    }
+	    if (i == lenA) {
+	        if (j == lenB) {
+	            result = "a = b";
+	        } else {
+	            result = "a ⊂ b";
+	        }
+	    }
+	    
+	    // check if a is a superset of b
+	    i = 0; j = 0;
+	    while (i < lenA && j < lenB) {
+	        if (a[i] < b[j]) {
+	            break;
+	        } else if (a[i] == b[j]) {
+	            i++;
+	            j++;
+	        } else {
+	            j++;
+	        }
+	    }
+	    if (j == lenB) {
+	        result = "a ⊃ b";
+	    }
+	    
+	    // check if a intersects b
+	    i = 0; j = 0;
+	    while (i < lenA && j < lenB) {
+	        if (a[i] < b[j]) {
+	            i++;
+	        } else if (a[i] == b[j]) {
+	            result = "a ∩ b";
+	            break;
+	        } else {
+	            j++;
+	        }
+	    }
+	    
+	    return result;
+	}
+	
+	public int[] freq(double[] arr) {
+		
+		return new int[10];
+	}
+}

@@ -1,0 +1,8 @@
+package tut4;
+
+public class Arrays {
+
+	public int countNegatives(int[] arr) {
+		
+	}
+}
