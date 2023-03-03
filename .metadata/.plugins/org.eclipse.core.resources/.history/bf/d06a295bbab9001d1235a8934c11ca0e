@@ -1,0 +1,29 @@
+package tut4;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Ex5{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter some numbers to the computation with Arrays:");
+		String str;
+		ArrayList<Double> ls = new ArrayList<Double>();
+		while(sc.hasNext()) {
+			str = sc.nextLine();
+			System.out.println(str + "|");
+			if(str == "X" || str == "X")
+				break;
+			ls.add(Double.parseDouble(str));
+		}
+		double[] arr = new double[ls.size()];
+		for(int i = 0; i < ls.size(); i++) {
+			arr[i] = ls.get(i);
+		}
+		System.out.println("Test median method: ");
+		System.out.println("The median: " + Arrays.median(arr));
+		System.out.print("Testin freq method: ");
+		Arrays.freq(arr);
+		
+	}
+}

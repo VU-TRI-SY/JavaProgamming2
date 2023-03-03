@@ -1,0 +1,17 @@
+package tut4;
+
+public class Ex5 {
+	public static void main(String[] args) {
+		Arrays A = new Arrays();
+		Math M = new Math();
+		Scanner sc = new Scanner(System.in);
+		char choice;
+		while(true) {
+			System.out.println("1. Using Arrays template");
+			System.out.println("2. Using Math template");
+			System.out.println("X. Exit");
+			System.out.println("Enter your choice: ");
+			choice = 
+		}
+	}
+}

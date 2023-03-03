@@ -1,0 +1,23 @@
+package tut4;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Ex5{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter some numbers to the computation with Arrays:");
+		String str;
+		ArrayList<Double> ls = new ArrayList<Double>();
+		while(sc.hasNext()) {
+			str = sc.nextLine();
+			if(str == "X" || str == "X")
+				break;
+			ls.add(Double.parseDouble(str));
+		}
+		Object[] arr = ls.toArray();
+		System.out.println("Test median and freq methods: ");
+		System.out.println("The median: " + )
+		
+	}
+}

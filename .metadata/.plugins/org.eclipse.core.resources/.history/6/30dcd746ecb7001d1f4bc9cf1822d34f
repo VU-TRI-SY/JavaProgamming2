@@ -1,8 +1,0 @@
-package tut4;
-
-public class Math {
-	public int remainder(int n) {
-		
-		return 0;
-	}
-}

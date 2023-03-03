@@ -2,7 +2,7 @@ package tut4;
 
 public class Arrays {
 
-	public int countNegatives(int[] arr) {
+	public static int  countNegatives(int[] arr) {
 		int count = 0;
 		for(int i = 0; i < arr.length; i++) {
 			if(arr[i] < 0) {
@@ -13,7 +13,7 @@ public class Arrays {
 		return count;
 	}
 	
-	public int countEvens(int[] arr) {
+	public static int countEvens(int[] arr) {
 		int count = 0;
 		for(int i = 0; i < arr.length; i++) {
 			if(arr[i] % 2 == 0) {
@@ -24,7 +24,7 @@ public class Arrays {
 		return count;
 	}
 	
-	public double[] divArray(double[] arr, double div) {
+	public static double[] divArray(double[] arr, double div) {
 		//res[i] = arr[i] / div
 		int len = arr.length;
 		double[] res = new double[len];
@@ -44,7 +44,7 @@ public class Arrays {
 		return minVal;
 	}
 	
-	public boolean isAscSorted(int[] arr) {
+	public static boolean isAscSorted(int[] arr) {
 		for(int i = 0; i <= arr.length-2; i++) {
 			if(arr[i] > arr[i+1]) {
 				return false;
@@ -65,7 +65,7 @@ public class Arrays {
 	    return len;
 	}
 	
-	public double[] sortDoubleArray(double[] b) {
+	public static double[] sortDoubleArray(double[] b) {
 		int len = b.length;
 		boolean check = true; //check = true để vòng while sẽ được chạy ít nhất 1 lần
 		while(check == true) {
@@ -83,7 +83,7 @@ public class Arrays {
 		return b;
 	}
 	
-	public double median(double[] arr) {
+	public static double median(double[] arr) {
 		//b1: tạo ra mảng b là mảng copy của arr
 		//b2: sắp xếp lại mảng b theo thứ tự tăng dần
 		//b3: tìm median trên mảng b và return kết quả
@@ -107,7 +107,7 @@ public class Arrays {
 		
 	}
 	
-	public String compare(double[] a, double[] b) {
+	public static String compare(double[] a, double[] b) {
 		String result = "A and B are not intersection"; //giả sử tập A và B không rơi vào 1 trong 4 mối quan hệ bài cho
 	    int lenA = a.length;
 	    int lenB = b.length;
@@ -202,7 +202,7 @@ public class Arrays {
 	    return result;
 	}
 	
-	public void freq(double[] arr) {
+	public static void freq(double[] arr) {
 		int len = arr.length;
 		
 		boolean[] vst = new boolean[len]; //visited: vst[i] == true ---> arr[i] đã được xét qua
@@ -231,49 +231,49 @@ public class Arrays {
 	//Ex2
 	//-------------------------------------------------------------------------------------------------------------------------------
 	
-	public static void main(String[] args) {
-		Arrays A = new Arrays();
-		//test countNegatives()
-//		int[] arr = {-1, 2, -6, 0, -4, 1, 3, 6, 8, -9, 10};
-//		int res = A.countNegatives(arr);
-//		System.out.println(res);
-		
-		//test countEvens()
-//		int[] arr = {-1, 2, -6, 0, -4, 1, 3, 6, 8, -9, 10};
-//		int res = A.countEvens(arr);
-//		System.out.println(res);
-		
-		//test divArray()
-//		double[] arr = {1.5, 2.5, 3.5, 4.5};
-//		double[] res = A.divArray(arr, 0.5);
-//		for(int i = 0; i < res.length; i++) {
-//			System.out.print(res[i] + " ");
-//		}
-//		System.out.println();
-		
-		//test min()
-//		int[] arr = {-1, 2, -6, 0, -4, 1, 3, 6, 8, -9, 10};
-//		int res = A.min(arr);
-//		System.out.println(res);
-		
-		//test isAscSorted()
-//		int[] arr = {-1, 2, -6, 0, -4, 1, 3, 6, 8, -9, 10};
-//		int[] arr = {-1, 0, 1, 2, 3};
-//		boolean res = A.isAscSorted(arr);
-//		System.out.println(res);
-		
-		//test median()
-//		double[] arr = {1.5, 0.5, 2.5, 9.5, 3.5, 4.5, 10.5};
-//		double res = A.median(arr);
-//		System.out.println(res);
-		//test compare()
-//		double[] a = {1.0, 2.0, 3.0, 4.0};
-//		double[] b = {1.0, 2.0, 3.0, 4.0, 6.0, 7.0, 8.0, 9.0};
-//		System.out.println(A.compare(a, b));
-		//test freq
-		double[] arr = {1.0, 2.0, 1.0, 2.0, 3.0, 5.0, 2.0, 3.0, 7.0};
-		A.freq(arr);
-	}
+//	public static void main(String[] args) {
+//		Arrays A = new Arrays();
+//		//test countNegatives()
+////		int[] arr = {-1, 2, -6, 0, -4, 1, 3, 6, 8, -9, 10};
+////		int res = A.countNegatives(arr);
+////		System.out.println(res);
+//		
+//		//test countEvens()
+////		int[] arr = {-1, 2, -6, 0, -4, 1, 3, 6, 8, -9, 10};
+////		int res = A.countEvens(arr);
+////		System.out.println(res);
+//		
+//		//test divArray()
+////		double[] arr = {1.5, 2.5, 3.5, 4.5};
+////		double[] res = A.divArray(arr, 0.5);
+////		for(int i = 0; i < res.length; i++) {
+////			System.out.print(res[i] + " ");
+////		}
+////		System.out.println();
+//		
+//		//test min()
+////		int[] arr = {-1, 2, -6, 0, -4, 1, 3, 6, 8, -9, 10};
+////		int res = A.min(arr);
+////		System.out.println(res);
+//		
+//		//test isAscSorted()
+////		int[] arr = {-1, 2, -6, 0, -4, 1, 3, 6, 8, -9, 10};
+////		int[] arr = {-1, 0, 1, 2, 3};
+////		boolean res = A.isAscSorted(arr);
+////		System.out.println(res);
+//		
+//		//test median()
+////		double[] arr = {1.5, 0.5, 2.5, 9.5, 3.5, 4.5, 10.5};
+////		double res = A.median(arr);
+////		System.out.println(res);
+//		//test compare()
+////		double[] a = {1.0, 2.0, 3.0, 4.0};
+////		double[] b = {1.0, 2.0, 3.0, 4.0, 6.0, 7.0, 8.0, 9.0};
+////		System.out.println(A.compare(a, b));
+//		//test freq
+////		double[] arr = {1.0, 2.0, 1.0, 2.0, 3.0, 5.0, 2.0, 3.0, 7.0};
+////		freq(arr);
+//	}
 }
 
 

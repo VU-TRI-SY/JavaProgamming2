@@ -1,7 +1,7 @@
 package tut4;
 
 public class Math {
-	public int remainder(int n, int d) {
+	public static int remainder(int n, int d) {
 		// n / d
 		while(n >= d) {
 			n = n - d;
@@ -9,7 +9,7 @@ public class Math {
 		return n;
 	}
 	
-	public int div(int n, int d) {
+	public static int div(int n, int d) {
 		// n/d
 		int res = 0;
 		while( n >= d) {
@@ -19,7 +19,7 @@ public class Math {
 		return res;
 	}
 	
-	public void middle(int n) {
+	public static void middle(int n) {
 		if(n >= 100 && n <= 999) {
 			// n = 123
 			
@@ -33,7 +33,7 @@ public class Math {
 		}
 	}
 	
-	public boolean isPalindrome(String str) {
+	public static boolean isPalindrome(String str) {
 		
 		int i = 0;
 	    int j = str.length() - 1;
@@ -47,7 +47,7 @@ public class Math {
 	    return true;
 	}
 	
-	public boolean isPrime(int num) {
+	public static boolean isPrime(int num) {
 		if (num <= 1) {
 	        return false;
 	    }
@@ -61,13 +61,13 @@ public class Math {
 	}
 	
 	//-----------------------------------------------------------------------------------
-	public static void main(String[] args) {
-		Math M = new Math();
-		System.out.println(M.remainder(10, 3));
-		System.out.println(M.div(10, 3));
-//		System.out.println(M.middle(41));
-		M.middle(471);
-		System.out.println(M.isPalindrome("abcdecba"));
-		System.out.println(M.isPrime(14));
-	}
+//	public static void main(String[] args) {
+//		Math M = new Math();
+//		System.out.println(M.remainder(10, 3));
+//		System.out.println(M.div(10, 3));
+////		System.out.println(M.middle(41));
+//		M.middle(471);
+//		System.out.println(M.isPalindrome("abcdecba"));
+//		System.out.println(M.isPrime(14));
+//	}
 }

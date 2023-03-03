@@ -1,0 +1,17 @@
+package tut4;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Ex5{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter some numbers to the computation:");
+		String str;
+		ArrayList<double> ls = new ArrayList<double>;
+		while(sc.hasNext()) {
+			str = sc.nextLine();
+			ls.add()
+		}
+	}
+}
