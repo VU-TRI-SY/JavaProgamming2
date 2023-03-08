@@ -1,0 +1,18 @@
+package tut5;
+
+public class GreetingConversationProc1 {
+    public static void main(String[] args) {
+        if (args == null || args.length < 2) {
+            System.out.println("Requires at least 2 names");
+            System.exit(1);
+        }
+        
+        for (String name: args) {
+            greet(name);
+        }
+    }
+
+    private static void greet(String name) {
+        System.out.printf("Hello, my name is %s%n", name);
+    }
+}

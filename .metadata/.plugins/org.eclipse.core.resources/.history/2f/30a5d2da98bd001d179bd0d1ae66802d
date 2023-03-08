@@ -1,0 +1,14 @@
+package tut5;
+
+public class Array {
+	private int[] arr;
+	
+	public Array(int size) {
+		arr = new int[size];
+	}
+//	(a). count the number of elements that are negative
+//	(b). find the minimum element
+//	(c). determine whether the array is in ascending order
+//	(d). return the length of the array
+//	(e). compute the frequencies of each element of the array
+}

@@ -1,0 +1,9 @@
+package tut5;
+
+public class Array {
+	private int[] arr;
+	
+	public Array(int size) {
+		arr = new int[size];
+	}
+}

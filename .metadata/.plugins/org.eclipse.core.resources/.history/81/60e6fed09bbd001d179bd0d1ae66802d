@@ -1,0 +1,7 @@
+package tut5;
+
+public class Ex6 {
+	public static void main(String[] args) {
+		Array A = new Array(5);
+	}
+}

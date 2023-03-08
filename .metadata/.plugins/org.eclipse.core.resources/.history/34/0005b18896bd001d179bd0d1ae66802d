@@ -1,0 +1,31 @@
+package tut5;
+
+public class GreetingConversation {
+    public static void main(String[] args) {
+        GreetingConversation gc = new GreetingConversation();
+        gc.greet(args);
+    }
+
+    private void greet(String[] names) {
+    	if (names == null || names.length < 2) {
+    		System.err.println("Requires at least 2 names");
+    		return;
+    	}
+    	
+    	Person[] persons = new Person[names.length];
+    	for(int i = 0; i < names.length; i++) {
+    		String n = names[i];
+    		Person p = new Person(n);
+    		persons[i] = p;
+    	}
+    	
+    	for (Person p : persons)
+    		p.greet();
+    }
+    
+    public void greet(Person[] persons, Phone[] phones) {
+    	for(int i = 0; i < persons.length; i++) {
+    		String currentname = persons[i].
+    	}
+    }
+}

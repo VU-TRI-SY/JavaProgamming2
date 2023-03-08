@@ -1,0 +1,45 @@
+package tut5;
+
+public class Array {
+	private int[] arr;
+	
+	public Array(int size) { //constructor
+		arr = new int[size];
+	}
+//	(a). count the number of elements that are negative
+	public int countNegatives() {
+		int res = 0;
+		for(int i = 0; i < arr.length; i++) {
+			if(arr[i] < 0)
+				res ++;
+		}
+		return res;
+	}
+	
+//	(b). find the minimum element
+	public int finMin() {
+		int res = arr[0];
+		for(int i = 1; i < arr.length; i++) {
+			if(res > arr[i]) {
+				res = arr[i];
+			}
+		}
+		return res;
+	}
+//	(c). determine whether the array is in ascending order
+	public boolean isAscending() {
+		for(int i = 0; i <= arr.length-2; i++) { //i <= n-2
+			if(arr[i] > arr[i+1])
+				return false;
+		}
+		
+		return true;
+	}
+	
+//	(d). return the length of the array
+	public int arrLength() {
+		return arr.length;
+	}
+	
+//	(e). compute the frequencies of each element of the array
+}

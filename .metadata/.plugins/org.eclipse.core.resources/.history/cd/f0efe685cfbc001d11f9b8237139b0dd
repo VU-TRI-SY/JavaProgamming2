@@ -1,0 +1,22 @@
+package tut5;
+
+public class Phone {
+	private String name;
+	private String model;
+	
+	public Phone(String aName, String aModel) {
+		name = aName;
+		model = aModel;
+	}
+	
+	
+	public void changeModel(String newModel) {
+		model = newModel;
+	}
+	
+	public void recordName(String nName) {
+		name = nName;
+	}
+	
+	
+}

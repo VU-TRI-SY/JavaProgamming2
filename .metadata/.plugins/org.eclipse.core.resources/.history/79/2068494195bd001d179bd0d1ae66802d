@@ -1,0 +1,24 @@
+package tut5;
+
+public class Phone {
+	@SuppressWarnings("unused")
+	private String name;
+	private String model;
+	private String owner;
+	
+	public Phone(String aName, String aModel) {
+		name = aName;
+		model = aModel;
+	}
+	
+	
+	public void changeModel(String newModel) {
+		model = newModel;
+	}
+	
+	public void recordName(String nOwner) {
+		owner = nOwner;
+	}
+	
+	
+}

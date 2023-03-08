@@ -1,0 +1,33 @@
+package tut5;
+
+public class Phone {
+	private String name;
+	private String model;
+	private String owner;
+	
+	public Phone(String aName, String aModel) {
+		setName(aName);
+		model = aModel;
+	}
+	
+	
+	public void changeModel(String newModel) {
+		model = newModel;
+	}
+	
+	public void recordName(String nOwner) {
+		owner = nOwner;
+	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
+}

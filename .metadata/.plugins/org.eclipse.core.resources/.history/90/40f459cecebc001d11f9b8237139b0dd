@@ -1,0 +1,12 @@
+package tut5;
+
+public class GreetingConversation {
+    public static void main(String[] args) {
+        GreetingConversation gc = new GreetingConversation();
+        gc.greet(args);
+    }
+
+    private static void greet(String name) {
+        System.out.printf("Hello, my name is %s%n", name);
+    }
+}
