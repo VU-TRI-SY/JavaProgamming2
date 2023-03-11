@@ -1,0 +1,145 @@
+package a1_123;
+
+import java.util.Arrays;
+
+public class CoffeeTinGame {
+    private static final char GREEN = 'G';
+    private static final char BLUE = 'B';
+    private static final char REMOVED = '-';
+    private static final char NULL = '\u0000';
+    private static char[] BeansBag = {BLUE, GREEN, REMOVED, BLUE, GREEN, REMOVED, BLUE, GREEN, REMOVED, BLUE, GREEN, REMOVED, BLUE, GREEN, REMOVED, BLUE, GREEN, REMOVED, BLUE, GREEN, REMOVED, BLUE, GREEN, REMOVED, BLUE, GREEN, REMOVED, BLUE, GREEN, REMOVED, BLUE, GREEN};
+
+    public static char tinGame(char[] tin) {
+        while (hasAtLeastTwoBeans(tin)) {
+            // take two beans from tin
+            char[] twoBeans = takeTwo(tin);
+            // process beans to update tin
+            char b1 = twoBeans[0];
+            char b2 = twoBeans[1];
+            // process beans to update tin
+            if (b1 == b2) {
+                // put B in bin
+                putIn(tin, BLUE);
+            } else { // BG, GB
+                // put G in bin
+                putIn(tin, GREEN);
+            }
+        }
+        return anyBean(tin);
+    }
+
+    private static boolean hasAtLeastTwoBeans(char[] tin) {
+        int count = 0;
+        for (char bean : tin) {
+            if (bean != REMOVED) {
+                count++;
+            }
+
+            if (count >= 2) // enough beans
+                return true;
+        }
+
+        // not enough beans
+        return false;
+    }
+
+    private static char[] takeTwo(char[] tin) {
+        char first = takeOne(tin);
+        char second = takeOne(tin);
+
+        return new char[]{first, second};
+    }
+
+    public static char takeOne(char[] tin) {
+//        for (int i = 0; i < tin.length; i++) {
+//            char bean = tin[i];
+//            if (bean != REMOVED) {  // found one
+//                tin[i] = REMOVED;
+//                return bean;
+//            }
+//        }
+    	
+    	boolean hasBeans = (anyBean(tin) != NULL);
+    	int id = -1;
+    	char bean = NULL;
+    	
+    	while(hasBeans) {
+    		id = randInt(tin.length);
+    		if(tin[id] != REMOVED) {
+    			bean = tin[id];
+    			tin[id] = REMOVED;
+    			break;
+    		}
+    	}
+
+        // no beans left
+        return bean;
+    }
+
+    private static void putIn(char[] tin, char bean) {
+        for (int i = 0; i < tin.length; i++) {
+            if (tin[i] == REMOVED) { // vacant position
+                tin[i] = bean;
+                break;
+            }
+        }
+    }
+
+    private static char anyBean(char[] tin) {
+        for (char bean : tin) {
+            if (bean != REMOVED) {
+                return bean;
+            }
+        }
+
+        // no beans left
+        return NULL;
+    }
+    
+    //--------------------------------------------------------------------
+    public static int randInt(int n) {
+        return (int) (Math.random() * n);
+    }
+    
+    public static char getBean(char[] beans, char type) {
+//        int index = randInt(beansBag.length);
+//        while (beansBag[index] != type) {
+//            index = randInt(beansBag.length);
+//        }
+//        char bean = beansBag[index];
+//        beansBag[index] = ' ';
+//        return bean;
+    	
+    	boolean hasSameBean = false;
+    	for(char b: beans) {
+    		if(b == type) {
+    			hasSameBean = true;
+    			break;
+    		}
+    	}
+    	
+    	int len = beans.length;
+    	int id  = -1;
+    	char bean = NULL;
+    	while(hasSameBean) {
+    		id = randInt(len);
+    		if(beans[id] == type) {
+    			bean = beans[id];
+    			beans[id] = REMOVED;
+    			break;
+    		}
+    	}
+    	return bean;
+    }
+    
+    public static void updateTin(char[] tin, char[] beansBag, char bean1, char bean2) {
+        char newBean = getBean(beansBag, ' ');
+        for (int i = 0; i < tin.length; i++) {
+            if (tin[i] == bean1) {
+                tin[i] = newBean;
+            } else if (tin[i] == bean2) {
+                tin[i] = newBean;
+            }
+        }
+    }
+}

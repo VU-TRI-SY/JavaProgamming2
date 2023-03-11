@@ -1,5 +1,7 @@
 package tut4;
 
+import java.util.ArrayList;
+
 public class Arrays {
 
 	public static int  countNegatives(int[] arr) {
@@ -202,9 +204,9 @@ public class Arrays {
 	    return result;
 	}
 	
-	public static void freq(double[] arr) {
+	public static int[][] freq(int[] arr) {
 		int len = arr.length;
-		
+		ArrayList<int[]> arrayList = new ArrayList<>();
 		boolean[] vst = new boolean[len]; //visited: vst[i] == true ---> arr[i] đã được xét qua
 		for(int i = 0; i < len; i++) {
 			vst[i] = false;
@@ -222,58 +224,26 @@ public class Arrays {
 					}
 				}
 				
-				System.out.println("The frequence of elements with value " + arr[i] + " are " + count);
+				int[] ar = new int[2];
+				ar[0] = arr[i];
+				ar[1] = count;
+				
+				arrayList.add(ar);
 			}
 		}
+		int[][] res = arrayList.toArray(new int[0][0]);
+		return res;
 		
 	}
 	
-	//Ex2
-	//-------------------------------------------------------------------------------------------------------------------------------
+	public static void main(String[] args) {
+		int[] arr = {1, 2, -6, 0, -4, 1, 2, 6, 8, -9, 10};
+		int[][] res = freq(arr);
+		for(int i = 0;i < res.length; i++) {
+			System.out.println("The element " + res[i][0] + " appears " + res[i][1] + " times");
+		}
+	}
 	
-//	public static void main(String[] args) {
-//		Arrays A = new Arrays();
-//		//test countNegatives()
-////		int[] arr = {-1, 2, -6, 0, -4, 1, 3, 6, 8, -9, 10};
-////		int res = A.countNegatives(arr);
-////		System.out.println(res);
-//		
-//		//test countEvens()
-////		int[] arr = {-1, 2, -6, 0, -4, 1, 3, 6, 8, -9, 10};
-////		int res = A.countEvens(arr);
-////		System.out.println(res);
-//		
-//		//test divArray()
-////		double[] arr = {1.5, 2.5, 3.5, 4.5};
-////		double[] res = A.divArray(arr, 0.5);
-////		for(int i = 0; i < res.length; i++) {
-////			System.out.print(res[i] + " ");
-////		}
-////		System.out.println();
-//		
-//		//test min()
-////		int[] arr = {-1, 2, -6, 0, -4, 1, 3, 6, 8, -9, 10};
-////		int res = A.min(arr);
-////		System.out.println(res);
-//		
-//		//test isAscSorted()
-////		int[] arr = {-1, 2, -6, 0, -4, 1, 3, 6, 8, -9, 10};
-////		int[] arr = {-1, 0, 1, 2, 3};
-////		boolean res = A.isAscSorted(arr);
-////		System.out.println(res);
-//		
-//		//test median()
-////		double[] arr = {1.5, 0.5, 2.5, 9.5, 3.5, 4.5, 10.5};
-////		double res = A.median(arr);
-////		System.out.println(res);
-//		//test compare()
-////		double[] a = {1.0, 2.0, 3.0, 4.0};
-////		double[] b = {1.0, 2.0, 3.0, 4.0, 6.0, 7.0, 8.0, 9.0};
-////		System.out.println(A.compare(a, b));
-//		//test freq
-////		double[] arr = {1.0, 2.0, 1.0, 2.0, 3.0, 5.0, 2.0, 3.0, 7.0};
-////		freq(arr);
-//	}
 }
 
 

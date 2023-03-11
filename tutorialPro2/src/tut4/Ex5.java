@@ -22,7 +22,7 @@ public class Ex5{
 		System.out.println("Testting median method: ");
 		System.out.println("The median: " + Arrays.median(arr));
 		System.out.print("Testing freq method: ");
-		Arrays.freq(arr);
+//		Arrays.freq(arr);
 		
 		System.out.println("Ennter 2 numbers: ");
 		int x = sc.nextInt();
