@@ -8,7 +8,7 @@ public class CoffeeTinGame {
     private static final char REMOVED = '-';
     private static final char NULL = '\u0000';
     private static char[] BeansBag = {BLUE, GREEN, REMOVED, BLUE, GREEN, REMOVED, BLUE, GREEN, REMOVED, BLUE, GREEN, REMOVED, BLUE, GREEN, REMOVED, BLUE, GREEN, REMOVED, BLUE, GREEN, REMOVED, BLUE, GREEN, REMOVED, BLUE, GREEN, REMOVED, BLUE, GREEN, REMOVED, BLUE, GREEN};
-    //giả sử BeansBag có đủ số bean cần cho tin game
+
     public static char tinGame(char[] tin) {
         while (hasAtLeastTwoBeans(tin)) {
             // take two beans from tin
@@ -47,10 +47,9 @@ public class CoffeeTinGame {
     public static char takeOne(char[] tin) {
     	int id = -1;
     	int len = tin.length;
-    	
     	do {
     		id = randInt(len);
-    	}while(tin[id] == REMOVED); // lấy index cho id một cách random đến khi nào mà bean tại index id đó khác REMOVED
+    	}while(tin[id] != REMOVED); // lấy index cho id một cách random đến khi nào mà bean tại index id đó khác REMOVED
     	
     	char bean = tin[id];
     	tin[id] = REMOVED;

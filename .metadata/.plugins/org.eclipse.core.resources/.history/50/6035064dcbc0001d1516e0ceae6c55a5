@@ -8,7 +8,7 @@ public class CoffeeTinGame {
     private static final char REMOVED = '-';
     private static final char NULL = '\u0000';
     private static char[] BeansBag = {BLUE, GREEN, REMOVED, BLUE, GREEN, REMOVED, BLUE, GREEN, REMOVED, BLUE, GREEN, REMOVED, BLUE, GREEN, REMOVED, BLUE, GREEN, REMOVED, BLUE, GREEN, REMOVED, BLUE, GREEN, REMOVED, BLUE, GREEN, REMOVED, BLUE, GREEN, REMOVED, BLUE, GREEN};
-    //giả sử BeansBag có đủ số bean cần cho tin game
+    //giả sử BeansBag có đủ số bean cần cho tingame
     public static char tinGame(char[] tin) {
         while (hasAtLeastTwoBeans(tin)) {
             // take two beans from tin
